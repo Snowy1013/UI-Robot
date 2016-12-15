@@ -2,6 +2,9 @@ package org.ayo.robot;
 
 import android.os.Bundle;
 
+import org.ayo.robot.canvas.shape.DemoDrawLine;
+import org.ayo.robot.canvas.shape.DemoDrawPoint;
+import org.ayo.robot.canvas.shape.DemoDrawCircile;
 import org.ayo.sample.menu.Leaf;
 import org.ayo.sample.menu.MainPagerActivity;
 import org.ayo.sample.menu.Menu;
@@ -46,9 +49,9 @@ public class MainActivity extends MainPagerActivity {
             MenuItem menuItem1 = new MenuItem("图形", R.drawable.weixin_normal, R.drawable.weixin_pressed);
             m1.addMenuItem(menuItem1);
             {
-                menuItem1.addLeaf(new Leaf("点", "", null));
-                menuItem1.addLeaf(new Leaf("线", "", null));
-                menuItem1.addLeaf(new Leaf("图形", "", null));
+                menuItem1.addLeaf(new Leaf("点", "", DemoDrawPoint.class));
+                menuItem1.addLeaf(new Leaf("线", "", DemoDrawLine.class));
+                menuItem1.addLeaf(new Leaf("图形", "", DemoDrawCircile.class));
                 menuItem1.addLeaf(new Leaf("Path", "", null));
                 menuItem1.addLeaf(new Leaf("Bitmap", "", null));
                 menuItem1.addLeaf(new Leaf("BitmapMesh", "", null));
