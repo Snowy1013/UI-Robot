@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.ayo.robot.Toaster;
 import org.ayo.robot.TripleState;
 
 /**
@@ -48,41 +47,41 @@ public abstract class ShapeView extends View {
         mPaint.setColor(mColor);
         tripleState.toPositive();
 
-        this.setOnClickListener(new OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                tripleState.toNextState();
-                if(tripleState.isPositive()) {
-                    mPaint.setStyle(Paint.Style.STROKE);
-                    Toaster.toastShort("STROKE");
-                }else if(tripleState.isNutral()) {
-                    mPaint.setStyle(Paint.Style.FILL);
-                    Toaster.toastShort("FILL");
-                }else if(tripleState.isNegative()) {
-                    mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-                    Toaster.toastShort("FILL_AND_STROKE");
-                }
-                invalidate();
-            }
-        });
+//        this.setOnClickListener(new OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                tripleState.toNextState();
+//                if(tripleState.isPositive()) {
+//                    mPaint.setStyle(Paint.Style.STROKE);
+//                    Toaster.toastShort("STROKE");
+//                }else if(tripleState.isNutral()) {
+//                    mPaint.setStyle(Paint.Style.FILL);
+//                    Toaster.toastShort("FILL");
+//                }else if(tripleState.isNegative()) {
+//                    mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+//                    Toaster.toastShort("FILL_AND_STROKE");
+//                }
+//                invalidate();
+//            }
+//        });
 
         ///----------------------------------------
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-
-        mPaint.setStrokeWidth(10); //px
-        mPaint.setStrokeMiter(20);  //是设置笔画的倾斜度，如：小时候用的铅笔，削的时候斜与垂直削出来的笔尖效果是不一样的
-
-        //设置笔触的样式：影响画笔的始末端
-        mPaint.setStrokeCap(Paint.Cap.BUTT);
-        mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeCap(Paint.Cap.SQUARE);
-
-        //设置结合处的样子：影响画笔的结合处
-        mPaint.setStrokeJoin(Paint.Join.BEVEL); //BEVEL：结合处为直线
-        mPaint.setStrokeJoin(Paint.Join.MITER); //Miter:结合处为锐角
-        mPaint.setStrokeJoin(Paint.Join.ROUND); //Round:结合处为圆弧
+//        mPaint.setStyle(Paint.Style.STROKE);
+//        mPaint.setStyle(Paint.Style.FILL);
+//        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+//
+//        mPaint.setStrokeWidth(10); //px
+//        mPaint.setStrokeMiter(20);  //是设置笔画的倾斜度，如：小时候用的铅笔，削的时候斜与垂直削出来的笔尖效果是不一样的
+//
+//        //设置笔触的样式：影响画笔的始末端
+//        mPaint.setStrokeCap(Paint.Cap.BUTT);
+//        mPaint.setStrokeCap(Paint.Cap.ROUND);
+//        mPaint.setStrokeCap(Paint.Cap.SQUARE);
+//
+//        //设置结合处的样子：影响画笔的结合处
+//        mPaint.setStrokeJoin(Paint.Join.BEVEL); //BEVEL：结合处为直线
+//        mPaint.setStrokeJoin(Paint.Join.MITER); //Miter:结合处为锐角
+//        mPaint.setStrokeJoin(Paint.Join.ROUND); //Round:结合处为圆弧
 
 
 
@@ -154,6 +153,7 @@ public abstract class ShapeView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
+        super.onTouchEvent(e);
         boolean consume = false;
         int x = (int)e.getX();
         int y = (int)e.getY();

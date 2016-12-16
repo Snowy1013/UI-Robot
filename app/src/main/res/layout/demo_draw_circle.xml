@@ -11,11 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="点击图形试试"
+        android:text="点击空白处试试"
         android:layout_gravity="center_horizontal"
         />
 
     <org.ayo.robot.canvas.shape.CircleView
+        android:id="@+id/shapeView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="#99cc99"
