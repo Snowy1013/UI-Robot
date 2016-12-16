@@ -10,7 +10,7 @@ import org.ayo.robot.canvas.shape.ShapeView;
  * Created by Administrator on 2016/12/16.
  */
 
-public class DemoShapehelper {
+public class DemoShapeMgmr {
 
     public static void attach(Activity mActivity, View root, final ShapeView shapeView){
         final PaintSettingView paintSettingView = PaintSettingView.attach(mActivity, root);

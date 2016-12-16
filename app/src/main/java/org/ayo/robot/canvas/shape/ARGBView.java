@@ -7,24 +7,24 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 
-public class LineView extends ShapeView {
-    public LineView(Context context) {
+public class ARGBView extends ShapeView {
+    public ARGBView(Context context) {
         super(context);
         init();
     }
 
-    public LineView(Context context, AttributeSet attrs) {
+    public ARGBView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public LineView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ARGBView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public LineView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ARGBView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
     }
@@ -33,20 +33,9 @@ public class LineView extends ShapeView {
 
     }
 
-    int startX = 10;
-    int startY = 10;
-    int endX = 100;
-    int endY = 100;
-
     @Override
     protected void drawShape(Canvas canvas, int w, int h, Paint paint) {
-        canvas.drawLine(startX, startY, endX, endY, paint);
+        canvas.drawARGB(100, 77, 11, 111);
     }
 
-    @Override
-    protected void onFingerMove(int x, int y, int dx, int dy) {
-        endX += dx;
-        endY += dy;
-        invalidate();
-    }
 }

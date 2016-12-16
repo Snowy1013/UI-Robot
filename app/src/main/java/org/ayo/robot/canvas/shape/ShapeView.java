@@ -95,6 +95,8 @@ public abstract class ShapeView extends View {
 
     protected abstract void drawShape(Canvas canvas, int w, int h, Paint paint);
     protected void onFingerMove(int x, int y, int dx, int dy){}
+    protected void onFingerDown(int x, int y){}
+    protected void onFingerUp(int x, int y){}
 
     //===========================================
     //为了让控件支持wrap_content时，内容尺寸取200px，需要我们重写measure过程
@@ -159,6 +161,7 @@ public abstract class ShapeView extends View {
         int y = (int)e.getY();
         if(e.getAction() == MotionEvent.ACTION_DOWN){
             consume = true;
+            onFingerDown(x, y);
         }else if(e.getAction() == MotionEvent.ACTION_MOVE){
             int dx = x - mLastX;
             int dy = y - mLastY;
@@ -166,6 +169,7 @@ public abstract class ShapeView extends View {
             onFingerMove(x, y, dx, dy);
         }else if(e.getAction() == MotionEvent.ACTION_UP){
             consume = true;
+            onFingerUp(x, y);
         }
 
         mLastX = x;

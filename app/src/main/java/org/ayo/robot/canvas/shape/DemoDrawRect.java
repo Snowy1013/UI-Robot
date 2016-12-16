@@ -12,25 +12,24 @@ import org.ayo.robot.R;
  * Created by Administrator on 2016/12/15.
  */
 
-public class DemoDrawPoint extends AyoActivityAttacher {
+public class DemoDrawRect extends AyoActivityAttacher {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.demo_draw_point);
+        setContentView(R.layout.demo_draw_rect);
 
         final ShapeView shapeView = findViewById(R.id.shapeView);
         final View root = findViewById(R.id.body);
         DemoShapeMgmr.attach(getActivity(), root, shapeView);
 
         TextView tv_method = findViewById(R.id.tv_method);
-        tv_method.setText("canvas.drawPoint(x, y, paint);");
+        tv_method.setText("canvas.drawCircle(w/2, h/2, radius, paint);");
 
         TextView tv_comment = findViewById(R.id.tv_comment);
-        tv_comment.setText("drawPoint(x, y, paint)：画个点，点大小基于stroke width\n" +
-                "drawPoints(float[] pts, int offest, int count, paint)：画很多点\n" +
-                "pts:[x0 y0 x1 y1 x2 y2 ...]\n" +
-                "offest: Number of values in the array to skip before drawing\n" +
-                "count: 画几个点，skip过offset个值之后，处理count个点，注意，是count*2个值");
+        tv_comment.setText("画个矩形\n" +
+                "Rect处理int\n" +
+                "RectF处理float\n" +
+                "二者都有inset，union，contains点或矩形的方法");
     }
 }

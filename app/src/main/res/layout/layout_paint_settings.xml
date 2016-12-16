@@ -24,11 +24,6 @@
             android:background="#B3ee3a"
             />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#B3ee3a"
-            />
         <!-- -->
         <com.ayo.robot.config.FormRadioGroup
             android:layout_width="match_parent"

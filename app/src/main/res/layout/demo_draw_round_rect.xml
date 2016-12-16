@@ -8,12 +8,20 @@
     >
 
     <include layout="@layout/layout_intro" />
-
-    <org.ayo.robot.canvas.shape.PointView
+    <org.ayo.robot.canvas.shape.RoundRectView
         android:id="@+id/shapeView"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="#99cc99"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="100dp"
+        />
+    <TextView
+        android:id="@+id/tv_radius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="20dp"
         />
 </FrameLayout>

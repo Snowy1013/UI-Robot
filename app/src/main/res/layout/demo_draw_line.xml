@@ -7,20 +7,13 @@
     android:background="#ffffff"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="点击空白处试试"
-        android:layout_gravity="center_horizontal"
-        />
-
+    <include layout="@layout/layout_intro" />
     <org.ayo.robot.canvas.shape.LineView
         android:id="@+id/shapeView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:background="#99cc99"
-        android:layout_margin="50dp"
-        android:layout_gravity="center"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="100dp"
         />
 </FrameLayout>

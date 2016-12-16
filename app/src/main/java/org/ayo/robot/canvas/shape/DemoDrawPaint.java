@@ -12,25 +12,21 @@ import org.ayo.robot.R;
  * Created by Administrator on 2016/12/15.
  */
 
-public class DemoDrawPoint extends AyoActivityAttacher {
+public class DemoDrawPaint extends AyoActivityAttacher {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.demo_draw_point);
+        setContentView(R.layout.demo_draw_paint);
 
         final ShapeView shapeView = findViewById(R.id.shapeView);
         final View root = findViewById(R.id.body);
         DemoShapeMgmr.attach(getActivity(), root, shapeView);
 
         TextView tv_method = findViewById(R.id.tv_method);
-        tv_method.setText("canvas.drawPoint(x, y, paint);");
+        tv_method.setText("canvas.drawPaint(paint);");
 
         TextView tv_comment = findViewById(R.id.tv_comment);
-        tv_comment.setText("drawPoint(x, y, paint)：画个点，点大小基于stroke width\n" +
-                "drawPoints(float[] pts, int offest, int count, paint)：画很多点\n" +
-                "pts:[x0 y0 x1 y1 x2 y2 ...]\n" +
-                "offest: Number of values in the array to skip before drawing\n" +
-                "count: 画几个点，skip过offset个值之后，处理count个点，注意，是count*2个值");
+        tv_comment.setText("在View上绘制，绘制的东西基于画笔，可以是纯色（FILL），也可以是包围View的矩形框（STROKE）");
     }
 }

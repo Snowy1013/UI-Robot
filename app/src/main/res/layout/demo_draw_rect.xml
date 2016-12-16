@@ -8,11 +8,11 @@
     >
 
     <include layout="@layout/layout_intro" />
-
-    <org.ayo.robot.canvas.shape.PointView
+    <org.ayo.robot.canvas.shape.RectView
         android:id="@+id/shapeView"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="#99cc99"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="100dp"
         />

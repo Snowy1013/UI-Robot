@@ -69,7 +69,7 @@ public class PaintSettingView extends LinearLayout {
     private void init(){
         LayoutInflater inf = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inf.inflate(R.layout.layout_paint_settings, this, true);
-        setBackgroundColor(Color.parseColor("#99000000"));
+        setBackgroundColor(Color.parseColor("#bb000000"));
         form_stroke_cap = id(R.id.form_stroke_cap);
         form_stroke_join = id(R.id.form_stroke_join);
         form_stroke_width = id(R.id.form_stroke_width);

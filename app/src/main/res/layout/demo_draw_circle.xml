@@ -7,19 +7,13 @@
     android:background="#ffffff"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="点击空白处试试"
-        android:layout_gravity="center_horizontal"
-        />
-
+    <include layout="@layout/layout_intro" />
     <org.ayo.robot.canvas.shape.CircleView
         android:id="@+id/shapeView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="#99cc99"
-        android:layout_gravity="center"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="100dp"
         />
 </FrameLayout>
