@@ -3,14 +3,18 @@ package org.ayo.robot;
 import android.os.Bundle;
 
 import org.ayo.robot.canvas.shape.DemoDrawARGB;
+import org.ayo.robot.canvas.shape.DemoDrawArc;
+import org.ayo.robot.canvas.shape.DemoDrawBitmap;
 import org.ayo.robot.canvas.shape.DemoDrawCircile;
 import org.ayo.robot.canvas.shape.DemoDrawColor;
 import org.ayo.robot.canvas.shape.DemoDrawLine;
+import org.ayo.robot.canvas.shape.DemoDrawOval;
 import org.ayo.robot.canvas.shape.DemoDrawPaint;
 import org.ayo.robot.canvas.shape.DemoDrawPath;
 import org.ayo.robot.canvas.shape.DemoDrawPoint;
 import org.ayo.robot.canvas.shape.DemoDrawRect;
 import org.ayo.robot.canvas.shape.DemoDrawRoundRect;
+import org.ayo.robot.canvas.shape.DemoDrawText;
 import org.ayo.sample.menu.Leaf;
 import org.ayo.sample.menu.MainPagerActivity;
 import org.ayo.sample.menu.Menu;
@@ -60,11 +64,14 @@ public class MainActivity extends MainPagerActivity {
                 menuItem1.addLeaf(new Leaf("draw paint", "", DemoDrawPaint.class));
                 menuItem1.addLeaf(new Leaf("draw Point", "", DemoDrawPoint.class));
                 menuItem1.addLeaf(new Leaf("draw Line", "", DemoDrawLine.class));
-                menuItem1.addLeaf(new Leaf("draw Path", "", DemoDrawPath.class));
                 menuItem1.addLeaf(new Leaf("draw Rect", "", DemoDrawRect.class));
-                menuItem1.addLeaf(new Leaf("draw RoundRect", "", DemoDrawRoundRect.class));
+                menuItem1.addLeaf(new Leaf("draw RoundRect：圆角矩形", "", DemoDrawRoundRect.class));
                 menuItem1.addLeaf(new Leaf("draw circle", "", DemoDrawCircile.class));
-                menuItem1.addLeaf(new Leaf("Bitmap", "", null));
+                menuItem1.addLeaf(new Leaf("draw Oval：椭圆", "", DemoDrawOval.class));
+                menuItem1.addLeaf(new Leaf("draw Arc：扇形或圆弧线", "", DemoDrawArc.class));
+                menuItem1.addLeaf(new Leaf("draw Path：路径，多边形，曲线", "", DemoDrawPath.class));
+                menuItem1.addLeaf(new Leaf("draw Text", "", DemoDrawText.class));
+                menuItem1.addLeaf(new Leaf("draw Bitmap", "", DemoDrawBitmap.class));
                 menuItem1.addLeaf(new Leaf("BitmapMesh", "", null));
                 menuItem1.addLeaf(new Leaf("PathEffect", "", null));
             }

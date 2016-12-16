@@ -3,6 +3,7 @@ package org.ayo.robot;
 import android.app.Activity;
 import android.graphics.Paint;
 import android.view.View;
+import android.widget.RadioButton;
 
 import org.ayo.robot.canvas.shape.ShapeView;
 
@@ -12,7 +13,7 @@ import org.ayo.robot.canvas.shape.ShapeView;
 
 public class DemoShapeMgmr {
 
-    public static void attach(Activity mActivity, View root, final ShapeView shapeView){
+    public static PaintSettingView attach(Activity mActivity, View root, final ShapeView shapeView){
         final PaintSettingView paintSettingView = PaintSettingView.attach(mActivity, root);
         root.findViewById(R.id.body).setOnClickListener(new View.OnClickListener(){
             @Override
@@ -49,5 +50,13 @@ public class DemoShapeMgmr {
                 shapeView.setPaintStrokeMiter(m);
             }
         });
+
+        paintSettingView.form_stroke_width.getInputView().setProgress((int) shapeView.getPaint().getStrokeWidth());
+        paintSettingView.form_stroke_miter.getInputView().setProgress((int) shapeView.getPaint().getStrokeMiter());
+//        paintSettingView.form_stroke_width.setLabel("设置stroke width（{progress}/100)".replace("{progress}", shapeView.getPaint().getStrokeWidth()+""));
+//        paintSettingView.form_stroke_miter.setLabel("设置stroke miter（{progress}/100)".replace("{progress}", shapeView.getPaint().getStrokeMiter()+""));
+        ((RadioButton)paintSettingView.form_stroke_style.getInputView().getChildAt(1)).setChecked(true);
+
+        return paintSettingView;
     }
 }

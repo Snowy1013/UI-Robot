@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import org.ayo.robot.TripleState;
+import org.ayo.robot.observe.Observable;
 
 /**
  * 画一个shape，点击可以切换FILL，STROKE样式
@@ -43,8 +44,15 @@ public abstract class ShapeView extends View {
 
     private TripleState tripleState = new TripleState();
 
+    public Paint getPaint(){
+        return mPaint;
+    }
+
     private void initttt(){
         mPaint.setColor(mColor);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeCap(Paint.Cap.BUTT);
+        mPaint.setStrokeJoin(Paint.Join.BEVEL);
         tripleState.toPositive();
 
 //        this.setOnClickListener(new OnClickListener(){
@@ -175,6 +183,11 @@ public abstract class ShapeView extends View {
         mLastX = x;
         mLastY = y;
         return consume;
+    }
+
+    protected Observable observable = new Observable();
+    public Observable getObservable(){
+        return observable;
     }
 
     public void setPaintColor(int color){

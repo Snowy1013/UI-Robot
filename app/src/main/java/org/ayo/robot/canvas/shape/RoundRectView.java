@@ -8,8 +8,6 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 
-import org.ayo.robot.observe.Observable;
-
 public class RoundRectView extends ShapeView {
     public RoundRectView(Context context) {
         super(context);
@@ -50,11 +48,7 @@ public class RoundRectView extends ShapeView {
         xRadius += dx;
         yRadius += dy;
         invalidate();
-        observable.notifyDataChanged(this, "xRadius = " + xRadius + ", yRadius = " + yRadius);
+        getObservable().notifyDataChanged(this, "xRadius = " + xRadius + ", yRadius = " + yRadius);
     }
 
-    private Observable observable = new Observable();
-    public Observable getObservable(){
-        return observable;
-    }
 }

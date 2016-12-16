@@ -24,7 +24,7 @@ public class DemoDrawCircile extends AyoActivityAttacher {
         DemoShapeMgmr.attach(getActivity(), root, shapeView);
 
         TextView tv_method = findViewById(R.id.tv_method);
-        tv_method.setText("canvas.drawCircle(w/2, h/2, radius, paint);");
+        tv_method.setText("canvas.drawCircle(w/2, h/2, radius, paint)");
 
         TextView tv_comment = findViewById(R.id.tv_comment);
         tv_comment.setText("画个圆形\n前两个参数是圆心\n" +

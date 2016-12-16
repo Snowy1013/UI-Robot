@@ -60,11 +60,11 @@ public class PaintSettingView extends LinearLayout {
         init();
     }
 
-    FormRadioGroup form_stroke_cap;
-    FormRadioGroup form_stroke_join;
-    FormRadioGroup form_stroke_style;
-    FormSeekBar form_stroke_width;
-    FormSeekBar form_stroke_miter;
+    public FormRadioGroup form_stroke_cap;
+    public FormRadioGroup form_stroke_join;
+    public FormRadioGroup form_stroke_style;
+    public FormSeekBar form_stroke_width;
+    public FormSeekBar form_stroke_miter;
 
     private void init(){
         LayoutInflater inf = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -79,18 +79,19 @@ public class PaintSettingView extends LinearLayout {
         form_stroke_style.setLabel("设置style");
         form_stroke_cap.setLabel("设置stroke cap");
         form_stroke_join.setLabel("设置stroke join");
-        form_stroke_width.setLabel("设置stroke width");
-        form_stroke_miter.setLabel("设置stroke miter");
+        form_stroke_width.setLabel("设置stroke width（0/100)");
+        form_stroke_miter.setLabel("设置stroke miter（0/100)");
 
         form_stroke_style.notifyDataSetChanged(Lists.newArrayList("FILL", "STROKE", "FILL_AND_STROKE"));
         form_stroke_cap.notifyDataSetChanged(Lists.newArrayList("BUTT", "ROUND", "SQUARE"));
         form_stroke_join.notifyDataSetChanged(Lists.newArrayList("BEVEL", "MITER", "ROUND"));
-        form_stroke_width.setSeekRange(100, 50);
-        form_stroke_miter.setSeekRange(100, 50);
+        form_stroke_width.setSeekRange(100, 0);
+        form_stroke_miter.setSeekRange(100, 0);
 
         form_stroke_width.getInputView().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                form_stroke_width.setLabel("设置stroke width（{progress}/100)".replace("{progress}", progress+""));
                 callback.onSelectStrokeWidth(progress);
             }
 
@@ -108,6 +109,7 @@ public class PaintSettingView extends LinearLayout {
         form_stroke_miter.getInputView().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                form_stroke_miter.setLabel("设置stroke miter（{progress}/100)".replace("{progress}", progress+""));
                 callback.onSelectStrokeMiter(progress);
             }
 
