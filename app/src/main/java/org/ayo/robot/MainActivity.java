@@ -2,19 +2,28 @@ package org.ayo.robot;
 
 import android.os.Bundle;
 
+import org.ayo.robot.canvas.clip.DemoClipPath;
+import org.ayo.robot.canvas.clip.DemoClipRect;
+import org.ayo.robot.canvas.clip.DemoClipRegion;
+import org.ayo.robot.canvas.path.DemoDrawPathEffect;
 import org.ayo.robot.canvas.shape.DemoDrawARGB;
 import org.ayo.robot.canvas.shape.DemoDrawArc;
 import org.ayo.robot.canvas.shape.DemoDrawBitmap;
+import org.ayo.robot.canvas.shape.DemoDrawBitmapMesh;
 import org.ayo.robot.canvas.shape.DemoDrawCircile;
 import org.ayo.robot.canvas.shape.DemoDrawColor;
 import org.ayo.robot.canvas.shape.DemoDrawLine;
 import org.ayo.robot.canvas.shape.DemoDrawOval;
 import org.ayo.robot.canvas.shape.DemoDrawPaint;
-import org.ayo.robot.canvas.shape.DemoDrawPath;
+import org.ayo.robot.canvas.path.DemoDrawPath_arc;
+import org.ayo.robot.canvas.path.DemoDrawPath_bezier2;
+import org.ayo.robot.canvas.path.DemoDrawPath_bezier3;
+import org.ayo.robot.canvas.path.DemoDrawPath_line;
+import org.ayo.robot.canvas.shape.DemoDrawPicture;
 import org.ayo.robot.canvas.shape.DemoDrawPoint;
 import org.ayo.robot.canvas.shape.DemoDrawRect;
 import org.ayo.robot.canvas.shape.DemoDrawRoundRect;
-import org.ayo.robot.canvas.shape.DemoDrawText;
+import org.ayo.robot.canvas.shape.DemoDrawVertical;
 import org.ayo.sample.menu.Leaf;
 import org.ayo.sample.menu.MainPagerActivity;
 import org.ayo.sample.menu.Menu;
@@ -25,7 +34,7 @@ import java.util.List;
 
 public class MainActivity extends MainPagerActivity {
 
-    private List<Menu> menus;
+    private static List<Menu> menus;
 
     @Override
     public List<Menu> getMenus() {
@@ -39,6 +48,9 @@ public class MainActivity extends MainPagerActivity {
 
     }
 
+    private void init(){
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -49,7 +61,7 @@ public class MainActivity extends MainPagerActivity {
         super.onDestroy();
     }
 
-    private void init(){
+    static{
         menus = new ArrayList<Menu>();
 
         ///--------------------------菜单1：View
@@ -69,20 +81,35 @@ public class MainActivity extends MainPagerActivity {
                 menuItem1.addLeaf(new Leaf("draw circle", "", DemoDrawCircile.class));
                 menuItem1.addLeaf(new Leaf("draw Oval：椭圆", "", DemoDrawOval.class));
                 menuItem1.addLeaf(new Leaf("draw Arc：扇形或圆弧线", "", DemoDrawArc.class));
-                menuItem1.addLeaf(new Leaf("draw Path：路径，多边形，曲线", "", DemoDrawPath.class));
-                menuItem1.addLeaf(new Leaf("draw Text", "", DemoDrawText.class));
+                menuItem1.addLeaf(new Leaf("draw Path：路径，多边形，曲线", "", DemoDrawPath_line.class));
                 menuItem1.addLeaf(new Leaf("draw Bitmap", "", DemoDrawBitmap.class));
-                menuItem1.addLeaf(new Leaf("BitmapMesh", "", null));
-                menuItem1.addLeaf(new Leaf("PathEffect", "", null));
+                menuItem1.addLeaf(new Leaf("draw Picture", "", DemoDrawPicture.class));
+                menuItem1.addLeaf(new Leaf("draw Vertical", "", DemoDrawVertical.class));
             }
 
-
-            MenuItem menuItem2 = new MenuItem("Clip", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+            MenuItem menuItem2 = new MenuItem("Path", R.drawable.weixin_normal, R.drawable.weixin_pressed);
             m1.addMenuItem(menuItem2);
             {
-                menuItem2.addLeaf(new Leaf("clip rect", "", null));
-                menuItem2.addLeaf(new Leaf("clip path", "", null));
-                menuItem2.addLeaf(new Leaf("clip region", "", null));
+                menuItem2.addLeaf(new Leaf("lineTo", "", DemoDrawPath_line.class));
+                menuItem2.addLeaf(new Leaf("arcTo", "", DemoDrawPath_arc.class));
+                menuItem2.addLeaf(new Leaf("quadTo", "", DemoDrawPath_bezier2.class));
+                menuItem2.addLeaf(new Leaf("cubicTo", "", DemoDrawPath_bezier3.class));
+                menuItem2.addLeaf(new Leaf("add系列方法：添加非连续路径", "", null));
+                menuItem2.addLeaf(new Leaf("PathEffect", "", DemoDrawPathEffect.class));
+            }
+
+            menuItem2 = new MenuItem("BitmapMesh", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+            m1.addMenuItem(menuItem2);
+            {
+                menuItem2.addLeaf(new Leaf("draw BitmapMesh：网格变换", "", DemoDrawBitmapMesh.class));
+            }
+
+            menuItem2 = new MenuItem("Clip", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+            m1.addMenuItem(menuItem2);
+            {
+                menuItem2.addLeaf(new Leaf("clip rect", "", DemoClipRect.class));
+                menuItem2.addLeaf(new Leaf("clip path", "", DemoClipPath.class));
+                menuItem2.addLeaf(new Leaf("clip region", "", DemoClipRegion.class));
             }
 
 
@@ -132,6 +159,12 @@ public class MainActivity extends MainPagerActivity {
             m3.addMenuItem(menuItem);
             {
                 menuItem.addLeaf(new Leaf("遮罩", "", null));
+            }
+
+            menuItem = new MenuItem("PathEffect", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+            m3.addMenuItem(menuItem);
+            {
+                menuItem.addLeaf(new Leaf("PathEffect", "", null));
             }
         }
 

@@ -1,4 +1,4 @@
-package org.ayo.robot.canvas.shape;
+package org.ayo.robot.canvas.path;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,24 +8,26 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 
-public class PathView extends ShapeView {
-    public PathView(Context context) {
+import org.ayo.robot.canvas.shape.ShapeView;
+
+public class PathLineView extends ShapeView {
+    public PathLineView(Context context) {
         super(context);
         init();
     }
 
-    public PathView(Context context, AttributeSet attrs) {
+    public PathLineView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public PathView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public PathLineView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public PathView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public PathLineView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
     }

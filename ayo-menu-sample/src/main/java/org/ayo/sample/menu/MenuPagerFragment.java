@@ -43,7 +43,8 @@ public class MenuPagerFragment extends SBFragment implements View.OnClickListene
 		// 底部
 		footer = (CustomRadioGroup) findViewById(R.id.main_footer);
 		footer.setBackgroundColor(Color.parseColor("#94d8b6"));
-		for (int i = 0; i < menu.subMenus.size(); i++) {
+		int count = menu != null && menu.subMenus != null ? menu.subMenus.size() : 0;
+		for (int i = 0; i < count; i++) {
 			footer.addItem(menu.subMenus.get(i).iconNormal,
 					menu.subMenus.get(i).iconPressed,
 					menu.subMenus.get(i).name);
@@ -74,9 +75,6 @@ public class MenuPagerFragment extends SBFragment implements View.OnClickListene
 
 	private void initFragments() {
 		fragments.clear();
-		if(menu.name.equals("笔记")){
-			//body.setCanScroll(false);
-		}
 		for(MenuItem menuItem: menu.subMenus){
 			MenuItemFragment frag1 = new MenuItemFragment();
 			frag1.setMenu(menuItem);

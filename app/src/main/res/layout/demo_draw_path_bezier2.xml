@@ -8,7 +8,7 @@
     >
 
     <include layout="@layout/layout_intro" />
-    <org.ayo.robot.canvas.shape.PathView
+    <org.ayo.robot.canvas.path.PathBezier2View
         android:id="@+id/shapeView"
         android:layout_width="300dp"
         android:layout_height="300dp"

@@ -1,6 +1,5 @@
-package org.ayo.robot.canvas.shape;
+package org.ayo.robot.canvas.path;
 
-import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,17 +7,18 @@ import android.widget.TextView;
 import org.ayo.core.activity.AyoActivityAttacher;
 import org.ayo.robot.DemoShapeMgmr;
 import org.ayo.robot.R;
+import org.ayo.robot.canvas.shape.ShapeView;
 
 /**
  * Created by Administrator on 2016/12/15.
  */
 
-public class DemoDrawPath extends AyoActivityAttacher {
+public class DemoDrawPath_line extends AyoActivityAttacher {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.demo_draw_path);
+        setContentView(R.layout.demo_draw_path_line);
 
         final ShapeView shapeView = findViewById(R.id.shapeView);
         final View root = findViewById(R.id.body);
@@ -26,11 +26,7 @@ public class DemoDrawPath extends AyoActivityAttacher {
 
         TextView tv_method = findViewById(R.id.tv_method);
         tv_method.setText("canvas.drawPath(path, paint);");
-        Path path = new Path();
-        path.moveTo(90, 330);
-        path.lineTo(150, 330);
-        path.lineTo(120, 270);
-        path.close();
+
         TextView tv_comment = findViewById(R.id.tv_comment);
         tv_comment.setText("drawPath(Path, Paint)\n" +
                 "Path path = new Path();\n" +

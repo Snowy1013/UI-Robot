@@ -3,7 +3,10 @@ package org.ayo.robot.observe;
 import java.util.ArrayList;
 
 /**
- * Created by Administrator on 2016/12/17.
+ *   protected Observable observable = new Observable();
+     public Observable getObservable(){
+            return observable;
+     }
  */
 
 public class Observable {

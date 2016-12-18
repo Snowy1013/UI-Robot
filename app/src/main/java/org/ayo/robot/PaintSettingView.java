@@ -14,9 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 
+import com.ayo.robot.config.FormCheckBox;
 import com.ayo.robot.config.FormRadioGroup;
 import com.ayo.robot.config.FormSeekBar;
 import com.google.common.collect.Lists;
+
+import java.util.List;
+
 
 /**
  * Created by Administrator on 2016/12/16.
@@ -65,6 +69,7 @@ public class PaintSettingView extends LinearLayout {
     public FormRadioGroup form_stroke_style;
     public FormSeekBar form_stroke_width;
     public FormSeekBar form_stroke_miter;
+    //public FormCheckBox form_stroke_patheffect;
 
     private void init(){
         LayoutInflater inf = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -75,16 +80,20 @@ public class PaintSettingView extends LinearLayout {
         form_stroke_width = id(R.id.form_stroke_width);
         form_stroke_miter = id(R.id.form_stroke_miter);
         form_stroke_style = id(R.id.form_stroke_style);
+        //form_stroke_patheffect = id(form_stroke_patheffect);
 
         form_stroke_style.setLabel("设置style");
         form_stroke_cap.setLabel("设置stroke cap");
         form_stroke_join.setLabel("设置stroke join");
         form_stroke_width.setLabel("设置stroke width（0/100)");
         form_stroke_miter.setLabel("设置stroke miter（0/100)");
+        //form_stroke_patheffect.setLabel("设置PathEffect");
 
         form_stroke_style.notifyDataSetChanged(Lists.newArrayList("FILL", "STROKE", "FILL_AND_STROKE"));
         form_stroke_cap.notifyDataSetChanged(Lists.newArrayList("BUTT", "ROUND", "SQUARE"));
         form_stroke_join.notifyDataSetChanged(Lists.newArrayList("BEVEL", "MITER", "ROUND"));
+//        form_stroke_patheffect.notifyDataSetChanged(Lists.newArrayList("CornerPathEffect", "DiscretePathEffect", "DashPathEffect"
+//            ,"PathDashPathEffect", "ComposePathEffect", "SumPathEffect", "none"));
         form_stroke_width.setSeekRange(100, 0);
         form_stroke_miter.setSeekRange(100, 0);
 
@@ -163,6 +172,13 @@ public class PaintSettingView extends LinearLayout {
                 }
             }
         });
+
+//        form_stroke_patheffect.setOnSelectChangedCallback(new FormCheckBox.OnSelectChangedCallback() {
+//            @Override
+//            public void onSelectChange(List<Object> selected) {
+//                callback.onSelectPathEffect(selected);
+//            }
+//        });
     }
 
     private <T> T id(int id){
@@ -175,6 +191,7 @@ public class PaintSettingView extends LinearLayout {
         void onSelectStrokeJoin(Paint.Join join);
         void onSelectStrokeWidth(float w);
         void onSelectStrokeMiter(float m);
+        void onSelectPathEffect(List<Object> selectedList);
     }
 
     private Callback callback;

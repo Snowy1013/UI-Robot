@@ -7,6 +7,8 @@ import android.widget.RadioButton;
 
 import org.ayo.robot.canvas.shape.ShapeView;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2016/12/16.
  */
@@ -49,6 +51,21 @@ public class DemoShapeMgmr {
             public void onSelectStrokeMiter(float m) {
                 shapeView.setPaintStrokeMiter(m);
             }
+
+            @Override
+            public void onSelectPathEffect(List<Object> selectedList) {
+//                if(selectedList == null || selectedList.size() == 0){
+//                    shapeView.getPaint().setPathEffect(null);
+//                    shapeView.invalidate();
+//                }else if(selectedList.size() == 1){
+//                    shapeView.getPaint().setPathEffect(getPathEffect(selectedList.get(0).toString()));
+//                    shapeView.invalidate();
+//                }else{
+//                    shapeView.getPaint().setPathEffect(getPathEffect(selectedList.get(0).toString()));
+//                    shapeView.invalidate();
+//                }
+
+            }
         });
 
         paintSettingView.form_stroke_width.getInputView().setProgress((int) shapeView.getPaint().getStrokeWidth());
@@ -59,4 +76,5 @@ public class DemoShapeMgmr {
 
         return paintSettingView;
     }
+
 }

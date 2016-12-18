@@ -80,7 +80,17 @@
             android:layout_height="1dp"
             android:background="#B3ee3a"
             />
-
+        <!--<com.ayo.robot.config.FormCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/form_stroke_patheffect"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B3ee3a"
+            />-->
 
     </LinearLayout>
 
