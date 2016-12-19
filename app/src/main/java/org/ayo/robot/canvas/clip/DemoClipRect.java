@@ -25,11 +25,9 @@ public class DemoClipRect extends AyoActivityAttacher {
         DemoShapeMgmr.attach(getActivity(), root, shapeView);
 
         TextView tv_method = findViewById(R.id.tv_method);
-        tv_method.setText("canvas.drawCircle(w/2, h/2, radius, paint)");
+        tv_method.setText("canvas.clipRect(Rect);");
 
         TextView tv_comment = findViewById(R.id.tv_comment);
-        tv_comment.setText("画个圆形\n前两个参数是圆心\n" +
-                "第三个参数是半径\n" +
-                "style可以指定填充还是画框\nstroke width大一点，就是个圆环");
+        tv_comment.setText("剪切一个矩形区域");
     }
 }
