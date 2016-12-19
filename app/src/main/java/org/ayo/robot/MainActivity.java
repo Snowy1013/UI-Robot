@@ -39,8 +39,10 @@ import org.ayo.robot.paint.colormatrix.DemoPortDuffColorFilter;
 import org.ayo.robot.paint.colormatrix.DemoPortDuffColorFilter2;
 import org.ayo.robot.paint.shader.DemoBitmapShader;
 import org.ayo.robot.paint.shader.DemoBitmapShader2;
-import org.ayo.robot.paint.xfermode.DemoXfermodes;
-import org.ayo.robot.paint.xfermode.DemoXfermodes2;
+import org.ayo.robot.paint.xfermode.DemoPorterDuffXfermode;
+import org.ayo.robot.paint.xfermode.DemoPorterDuffXfermode2;
+import org.ayo.robot.paint.xfermode.DemoPorterDuffXfermode3;
+import org.ayo.robot.paint.xfermode.DemoPorterDuffXfermode4;
 import org.ayo.sample.menu.Leaf;
 import org.ayo.sample.menu.MainPagerActivity;
 import org.ayo.sample.menu.Menu;
@@ -107,10 +109,10 @@ public class MainActivity extends MainPagerActivity {
             MenuItem menuItem2 = new MenuItem("Path", R.drawable.weixin_normal, R.drawable.weixin_pressed);
             m1.addMenuItem(menuItem2);
             {
-                menuItem2.addLeaf(new Leaf("lineTo", "", DemoDrawPath_line.class));
-                menuItem2.addLeaf(new Leaf("arcTo", "", DemoDrawPath_arc.class));
-                menuItem2.addLeaf(new Leaf("quadTo", "", DemoDrawPath_bezier2.class));
-                menuItem2.addLeaf(new Leaf("cubicTo", "", DemoDrawPath_bezier3.class));
+                menuItem2.addLeaf(new Leaf("lineTo：直线相连", "", DemoDrawPath_line.class));
+                menuItem2.addLeaf(new Leaf("arcTo：弧线（或直线+弧线）", "", DemoDrawPath_arc.class));
+                menuItem2.addLeaf(new Leaf("quadTo：二阶贝塞尔曲线", "", DemoDrawPath_bezier2.class));
+                menuItem2.addLeaf(new Leaf("cubicTo：三阶贝塞尔曲线", "", DemoDrawPath_bezier3.class));
                 menuItem2.addLeaf(new Leaf("add系列方法：添加非连续路径", "", null));
                 menuItem2.addLeaf(new Leaf("PathEffect", "", DemoDrawPathEffect.class));
             }
@@ -127,7 +129,7 @@ public class MainActivity extends MainPagerActivity {
                 menuItem2.addLeaf(new Leaf("clip rect", "", DemoClipRect.class));
                 menuItem2.addLeaf(new Leaf("clip path", "", DemoClipPath.class));
                 menuItem2.addLeaf(new Leaf("clip region：已被废弃，因为不支持matrix", "", DemoClipRegion.class));
-                menuItem2.addLeaf(new Leaf("clip region op", "", DemoClipRegionOp.class));
+                menuItem2.addLeaf(new Leaf("clip region op：两个剪切区域叠加的不同效果", "", DemoClipRegionOp.class));
             }
 
 
@@ -154,15 +156,19 @@ public class MainActivity extends MainPagerActivity {
                 menuItem.addLeaf(new Leaf("ColorMatrixColorFilter:处理Bitmap", "", DemoColorMatrixColorFilter2.class));
                 menuItem.addLeaf(new Leaf("LightingColorFilter:光照颜色过滤器", "", DemoLightingColorFilter.class));
                 menuItem.addLeaf(new Leaf("LightingColorFilter:处理Bitmap", "", DemoLightingColorFilter2.class));
-                menuItem.addLeaf(new Leaf("PorterDuffColorFilter", "图像色彩混合", DemoPortDuffColorFilter.class));
-                menuItem.addLeaf(new Leaf("PorterDuffColorFilter", "图形混合", DemoPortDuffColorFilter2.class));
+                menuItem.addLeaf(new Leaf("PorterDuffColorFilter：图像色彩混合", "", DemoPortDuffColorFilter.class));
+                menuItem.addLeaf(new Leaf("PorterDuffColorFilter：图形混合", "", DemoPortDuffColorFilter2.class));
             }
 
             menuItem = new MenuItem("Xfermode", R.drawable.weixin_normal, R.drawable.weixin_pressed);
             m3.addMenuItem(menuItem);
             {
-                menuItem.addLeaf(new Leaf("图形混合", "", DemoXfermodes.class));
-                menuItem.addLeaf(new Leaf("图形混合2", "", DemoXfermodes2.class));
+                menuItem.addLeaf(new Leaf("AvoidXfermode：已废弃", "", null));
+                menuItem.addLeaf(new Leaf("PixelXorXfermode：已废弃", "", null));
+                menuItem.addLeaf(new Leaf("PorterDuffXfermode：图形混合", "", DemoPorterDuffXfermode.class));
+                menuItem.addLeaf(new Leaf("PorterDuffXfermode：聚焦美女", "", DemoPorterDuffXfermode2.class));
+                menuItem.addLeaf(new Leaf("PorterDuffXfermode：聚焦美女2", "", DemoPorterDuffXfermode3.class));
+                menuItem.addLeaf(new Leaf("PorterDuffXfermode：画画板，橡皮擦", "", DemoPorterDuffXfermode4.class));
             }
 
             menuItem = new MenuItem("Shader", R.drawable.weixin_normal, R.drawable.weixin_pressed);
