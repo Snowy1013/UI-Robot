@@ -5,6 +5,13 @@ import android.os.Bundle;
 import org.ayo.robot.canvas.clip.DemoClipPath;
 import org.ayo.robot.canvas.clip.DemoClipRect;
 import org.ayo.robot.canvas.clip.DemoClipRegion;
+import org.ayo.robot.canvas.clip.DemoClipRegionOp;
+import org.ayo.robot.canvas.matrix.DemoMatrix;
+import org.ayo.robot.canvas.matrix.DemoRotate;
+import org.ayo.robot.canvas.matrix.DemoSave;
+import org.ayo.robot.canvas.matrix.DemoScale;
+import org.ayo.robot.canvas.matrix.DemoSkew;
+import org.ayo.robot.canvas.matrix.DemoTranslate;
 import org.ayo.robot.canvas.path.DemoDrawPathEffect;
 import org.ayo.robot.canvas.shape.DemoDrawARGB;
 import org.ayo.robot.canvas.shape.DemoDrawArc;
@@ -109,17 +116,20 @@ public class MainActivity extends MainPagerActivity {
             {
                 menuItem2.addLeaf(new Leaf("clip rect", "", DemoClipRect.class));
                 menuItem2.addLeaf(new Leaf("clip path", "", DemoClipPath.class));
-                menuItem2.addLeaf(new Leaf("clip region", "", DemoClipRegion.class));
+                menuItem2.addLeaf(new Leaf("clip region：已被废弃，因为不支持matrix", "", DemoClipRegion.class));
+                menuItem2.addLeaf(new Leaf("clip region op", "", DemoClipRegionOp.class));
             }
 
 
             MenuItem menuItem3 = new MenuItem("图层变换", R.drawable.weixin_normal, R.drawable.weixin_pressed);
             m1.addMenuItem(menuItem3);
             {
-                menuItem3.addLeaf(new Leaf("平移", "", null));
-                menuItem3.addLeaf(new Leaf("缩放", "", null));
-                menuItem3.addLeaf(new Leaf("旋转", "", null));
-                menuItem3.addLeaf(new Leaf("自己配置Matrix", "", null));
+                menuItem3.addLeaf(new Leaf("save和restore", "", DemoSave.class));
+                menuItem3.addLeaf(new Leaf("旋转", "", DemoRotate.class));
+                menuItem3.addLeaf(new Leaf("平移", "", DemoTranslate.class));
+                menuItem3.addLeaf(new Leaf("缩放", "", DemoScale.class));
+                menuItem3.addLeaf(new Leaf("错切", "", DemoSkew.class));
+                menuItem3.addLeaf(new Leaf("自己配置Matrix", "", DemoMatrix.class));
             }
         }
 
