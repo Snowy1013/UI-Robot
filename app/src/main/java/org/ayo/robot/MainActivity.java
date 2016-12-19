@@ -168,13 +168,7 @@ public class MainActivity extends MainPagerActivity {
             menuItem = new MenuItem("字体", R.drawable.weixin_normal, R.drawable.weixin_pressed);
             m3.addMenuItem(menuItem);
             {
-                menuItem.addLeaf(new Leaf("遮罩", "", null));
-            }
-
-            menuItem = new MenuItem("PathEffect", R.drawable.weixin_normal, R.drawable.weixin_pressed);
-            m3.addMenuItem(menuItem);
-            {
-                menuItem.addLeaf(new Leaf("PathEffect", "", null));
+                menuItem.addLeaf(new Leaf("draw text", "", null));
             }
         }
 
