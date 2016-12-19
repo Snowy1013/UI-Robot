@@ -202,49 +202,49 @@ public class MainActivity extends MainPagerActivity {
 
         }
 
-        ///--------------------------菜单1：开源
-        m3 = new Menu("Bitmap", R.drawable.find_normal, R.drawable.find_pressed);
-        menus.add(m3);
-        {
-            MenuItem menuItem = new MenuItem("Bitmap", R.drawable.weixin_normal, R.drawable.weixin_pressed);
-            m3.addMenuItem(menuItem);
-            {
-                menuItem.addLeaf(new Leaf("解析", "", null));
-                menuItem.addLeaf(new Leaf("压缩", "", null));
-                menuItem.addLeaf(new Leaf("手势缩放", "", null));
-                menuItem.addLeaf(new Leaf("剪切", "", null));
-                menuItem.addLeaf(new Leaf("合并", "", null));
-            }
-        }
-
-        ///--------------------------菜单1：开源
-        m3 = new Menu("多媒体", R.drawable.find_normal, R.drawable.find_pressed);
-        menus.add(m3);
-        {
-            MenuItem menuItem = new MenuItem("照相", R.drawable.weixin_normal, R.drawable.weixin_pressed);
-            m3.addMenuItem(menuItem);
-            {
-                menuItem.addLeaf(new Leaf("照相", "", null));
-                menuItem.addLeaf(new Leaf("滤镜", "", null));
-            }
-
-            menuItem = new MenuItem("视频", R.drawable.weixin_normal, R.drawable.weixin_pressed);
-            m3.addMenuItem(menuItem);
-            {
-                menuItem.addLeaf(new Leaf("录视频", "", null));
-                menuItem.addLeaf(new Leaf("视频滤镜", "", null));
-                menuItem.addLeaf(new Leaf("视频编码", "", null));
-                menuItem.addLeaf(new Leaf("流媒体", "", null));
-            }
-
-            menuItem = new MenuItem("音频", R.drawable.weixin_normal, R.drawable.weixin_pressed);
-            m3.addMenuItem(menuItem);
-            {
-                menuItem.addLeaf(new Leaf("录音", "", null));
-                menuItem.addLeaf(new Leaf("编解码", "", null));
-                menuItem.addLeaf(new Leaf("音乐播放器", "", null));
-            }
-        }
+//        ///--------------------------菜单1：开源
+//        m3 = new Menu("Bitmap", R.drawable.find_normal, R.drawable.find_pressed);
+//        menus.add(m3);
+//        {
+//            MenuItem menuItem = new MenuItem("Bitmap", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+//            m3.addMenuItem(menuItem);
+//            {
+//                menuItem.addLeaf(new Leaf("解析", "", null));
+//                menuItem.addLeaf(new Leaf("压缩", "", null));
+//                menuItem.addLeaf(new Leaf("手势缩放", "", null));
+//                menuItem.addLeaf(new Leaf("剪切", "", null));
+//                menuItem.addLeaf(new Leaf("合并", "", null));
+//            }
+//        }
+//
+//        ///--------------------------菜单1：开源
+//        m3 = new Menu("多媒体", R.drawable.find_normal, R.drawable.find_pressed);
+//        menus.add(m3);
+//        {
+//            MenuItem menuItem = new MenuItem("照相", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+//            m3.addMenuItem(menuItem);
+//            {
+//                menuItem.addLeaf(new Leaf("照相", "", null));
+//                menuItem.addLeaf(new Leaf("滤镜", "", null));
+//            }
+//
+//            menuItem = new MenuItem("视频", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+//            m3.addMenuItem(menuItem);
+//            {
+//                menuItem.addLeaf(new Leaf("录视频", "", null));
+//                menuItem.addLeaf(new Leaf("视频滤镜", "", null));
+//                menuItem.addLeaf(new Leaf("视频编码", "", null));
+//                menuItem.addLeaf(new Leaf("流媒体", "", null));
+//            }
+//
+//            menuItem = new MenuItem("音频", R.drawable.weixin_normal, R.drawable.weixin_pressed);
+//            m3.addMenuItem(menuItem);
+//            {
+//                menuItem.addLeaf(new Leaf("录音", "", null));
+//                menuItem.addLeaf(new Leaf("编解码", "", null));
+//                menuItem.addLeaf(new Leaf("音乐播放器", "", null));
+//            }
+//        }
 
     }
 }
